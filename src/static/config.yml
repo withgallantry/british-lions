@@ -4,16 +4,20 @@ backend:
 media_folder: src/assets
 public_folder: /assets
 collections:
-  - name: "pages"
-    label: "Pages"
-    label_singular: "Page" # Used in the UI, ie: "New Post"
-    folder: "content/blog"
+  - name: "Mythics"
+    label: "Mythics"
+    label_singular: "Mythic" # Used in the UI, ie: "New Post"
+    folder: "content/mythics"
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string"}
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - { label: "Cover", name: "cover", widget: "image", required: false}
-      - { label: "Tags", name: "tags", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown"}
+      - { label: "Dungeon", name: "dungeon", widget: "select", options: ["De Other Side", "Halls of Atonement", "Mists of Tirna Scithe", "Plaguefall", "Sanguine Depths","Spires of Ascension","The Necrotic Wake","Theater of Pain"]}
+      - { label: "Additional Details", name: "details", widget: "markdown" }
+      - label: "Start time"
+        name: "start"
+        widget: "datetime"
+        default: ""
+        date_format: "DD.MM.YYYY" # e.g. 24.12.2021
+        time_format: "HH:mm" # e.g. 21:07
+        format: "LLL"
+        picker_utc: true
 
